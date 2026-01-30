@@ -48,20 +48,20 @@ The project is built with a MERN stack and is designed to seamlessly integrate a
 
 ### 🤖 AI-based dropout risk prediction
 
-📝 Prediction history logging
+### 📝 Prediction history logging
 
-⚙️ Admin configuration panel
+### ⚙️ Admin configuration panel
 
-📈 Data-driven academic insights
+### 📈 Data-driven academic insights
 
-🤖 AI Prediction Flow
+### 🤖 AI Prediction Flow
 
-User enters student data (attendance, grades, engagement)
+### User enters student data (attendance, grades, engagement)
 
-Frontend sends data to backend API
+### Frontend sends data to backend API
 
-Backend calls the ML model for inference
+### Backend calls the ML model for inference
 
-Prediction result is returned and displayed on UI
+### Prediction result is returned and displayed on UI
 
-Results are stored for future analysis
+### Results are stored for future analysis
