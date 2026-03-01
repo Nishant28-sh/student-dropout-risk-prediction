@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML Prediction App</title>
+</head>
+<body>
+    <h2>Enter Input Values</h2>
+    <form action="/predict" method="post">
+        <label>Feature 1:</label>
+        <input type="number" step="any" name="feature1" required><br><br>
+
+        <label>Feature 2:</label>
+        <input type="number" step="any" name="feature2" required><br><br>
+
+        <label>Category:</label>
+        <select name="category">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
