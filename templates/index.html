@@ -1,25 +1,733 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ML Prediction App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dropout Risk Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0f1117;
+      --surface:   #181c27;
+      --card:      #1e2335;
+      --border:    #2a3050;
+      --accent:    #4f8ef7;
+      --accent2:   #7c5cbf;
+      --text:      #e8ecf4;
+      --muted:     #7a849e;
+      --green:     #34c98a;
+      --yellow:    #f5a623;
+      --red:       #f25c5c;
+      --radius:    14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #141829 0%, #1a1f38 60%, #111524 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .logo {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: grid; place-items: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(79,142,247,0.3);
+    }
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #e8ecf4, #a0b0d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .badge {
+      margin-left: auto;
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.3);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── Section cards ── */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.4s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .section:nth-child(2) { animation-delay: 0.07s; }
+    .section:nth-child(3) { animation-delay: 0.14s; }
+
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Form grid ── */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .field.span2 { grid-column: span 2; }
+
+    label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    input[type="number"],
+    select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.88rem;
+      padding: 10px 14px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    input[type="number"]:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+    }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a849e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    /* ── Toggle pills ── */
+    .toggle-group {
+      display: flex;
+      gap: 6px;
+    }
+    .toggle-group input[type="radio"] { display: none; }
+    .toggle-group label {
+      flex: 1;
+      text-align: center;
+      padding: 9px 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--surface);
+      transition: all 0.18s;
+      letter-spacing: 0;
+    }
+    .toggle-group input[type="radio"]:checked + label {
+      background: rgba(79,142,247,0.15);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── Submit button ── */
+    .btn-predict {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(79,142,247,0.25);
+      margin-top: 8px;
+    }
+    .btn-predict:hover  { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(79,142,247,0.35); }
+    .btn-predict:active { transform: translateY(0); }
+    .btn-predict:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    /* ── Sticky result panel ── */
+    .result-panel {
+      position: sticky;
+      top: 100px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      animation: fadeUp 0.4s ease 0.2s both;
+    }
+
+    .result-placeholder {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--muted);
+    }
+    .result-placeholder .icon { font-size: 48px; margin-bottom: 14px; opacity: 0.4; }
+    .result-placeholder p { font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── Result display ── */
+    .result-content { display: none; }
+    .result-content.show { display: block; animation: fadeUp 0.3s ease; }
+
+    .risk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .risk-badge.HIGH   { background: rgba(242,92,92,0.15);  color: var(--red);    border: 1px solid rgba(242,92,92,0.3); }
+    .risk-badge.MEDIUM { background: rgba(245,166,35,0.15); color: var(--yellow); border: 1px solid rgba(245,166,35,0.3); }
+    .risk-badge.LOW    { background: rgba(52,201,138,0.15); color: var(--green);  border: 1px solid rgba(52,201,138,0.3); }
+
+    .prob-display {
+      text-align: center;
+      margin: 24px 0;
+    }
+    .prob-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .prob-number.HIGH   { color: var(--red); }
+    .prob-number.MEDIUM { color: var(--yellow); }
+    .prob-number.LOW    { color: var(--green); }
+    .prob-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── Progress bar ── */
+    .prob-bar-wrap {
+      background: var(--surface);
+      border-radius: 6px;
+      height: 8px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    .prob-bar {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.8s cubic-bezier(.4,0,.2,1);
+      width: 0%;
+    }
+    .prob-bar.HIGH   { background: linear-gradient(90deg, #f25c5c, #ff8a80); }
+    .prob-bar.MEDIUM { background: linear-gradient(90deg, #f5a623, #ffd54f); }
+    .prob-bar.LOW    { background: linear-gradient(90deg, #34c98a, #69f0ae); }
+
+    .result-message {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 16px;
+      border-left: 3px solid var(--border);
+    }
+    .result-message.HIGH   { border-left-color: var(--red); }
+    .result-message.MEDIUM { border-left-color: var(--yellow); }
+    .result-message.LOW    { border-left-color: var(--green); }
+
+    /* ── Key factors ── */
+    .factors {
+      margin-top: 20px;
+    }
+    .factors-title {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .factor-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .factor-item:last-child { border-bottom: none; }
+    .factor-val {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── Error ── */
+    .error-box {
+      background: rgba(242,92,92,0.1);
+      border: 1px solid rgba(242,92,92,0.3);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.83rem;
+      color: var(--red);
+      display: none;
+      margin-top: 12px;
+    }
+
+    /* ── Loading spinner ── */
+    .spinner {
+      display: inline-block;
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ── */
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      .result-panel { position: static; }
+      .form-grid, .form-grid.three { grid-template-columns: 1fr 1fr; }
+      header { padding: 20px; }
+    }
+    @media (max-width: 500px) {
+      .form-grid, .form-grid.three { grid-template-columns: 1fr; }
+      .field.span2 { grid-column: span 1; }
+    }
+  </style>
 </head>
 <body>
-    <h2>Enter Input Values</h2>
-    <form action="/predict" method="post">
-        <label>Feature 1:</label>
-        <input type="number" step="any" name="feature1" required><br><br>
 
-        <label>Feature 2:</label>
-        <input type="number" step="any" name="feature2" required><br><br>
+<header>
+  <div class="logo">🎓</div>
+  <div>
+    <h1>Dropout Risk Predictor</h1>
+    <p>XGBoost model · 88.9% accuracy · Binary classification</p>
+  </div>
+  <span class="badge">Live Model</span>
+</header>
 
-        <label>Category:</label>
-        <select name="category">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-        </select><br><br>
+<div class="container">
+  <div class="grid">
 
-        <button type="submit">Predict</button>
-    </form>
+    <!-- ── LEFT: Form ── -->
+    <div>
+
+      <!-- Section 1: Academic Performance -->
+      <div class="section">
+        <div class="section-title">📚 1st Semester Performance</div>
+        <div class="form-grid three">
+          <div class="field">
+            <label>Units Enrolled</label>
+            <input type="number" id="cu1_enrolled" value="6" min="0" max="26"/>
+          </div>
+          <div class="field">
+            <label>Units Approved</label>
+            <input type="number" id="cu1_approved" value="6" min="0" max="26"/>
+          </div>
+          <div class="field">
+            <label>Grade (0–20)</label>
+            <input type="number" id="cu1_grade" value="13.0" min="0" max="20" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>Evaluations</label>
+            <input type="number" id="cu1_evaluations" value="6" min="0" max="45"/>
+          </div>
+          <div class="field">
+            <label>Credited</label>
+            <input type="number" id="cu1_credited" value="0" min="0" max="20"/>
+          </div>
+          <div class="field">
+            <label>Without Evaluations</label>
+            <input type="number" id="cu1_without_eval" value="0" min="0" max="12"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">📗 2nd Semester Performance</div>
+        <div class="form-grid three">
+          <div class="field">
+            <label>Units Enrolled</label>
+            <input type="number" id="cu2_enrolled" value="6" min="0" max="23"/>
+          </div>
+          <div class="field">
+            <label>Units Approved</label>
+            <input type="number" id="cu2_approved" value="6" min="0" max="20"/>
+          </div>
+          <div class="field">
+            <label>Grade (0–20)</label>
+            <input type="number" id="cu2_grade" value="13.0" min="0" max="20" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>Evaluations</label>
+            <input type="number" id="cu2_evaluations" value="6" min="0" max="33"/>
+          </div>
+          <div class="field">
+            <label>Credited</label>
+            <input type="number" id="cu2_credited" value="0" min="0" max="19"/>
+          </div>
+          <div class="field">
+            <label>Without Evaluations</label>
+            <input type="number" id="cu2_without_eval" value="0" min="0" max="12"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Financial -->
+      <div class="section">
+        <div class="section-title">💳 Financial Status</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Tuition Fees Up To Date</label>
+            <div class="toggle-group">
+              <input type="radio" name="tuition" id="tuition_yes" value="1" checked/>
+              <label for="tuition_yes">✅ Yes</label>
+              <input type="radio" name="tuition" id="tuition_no" value="0"/>
+              <label for="tuition_no">❌ No</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Debtor</label>
+            <div class="toggle-group">
+              <input type="radio" name="debtor" id="debtor_no" value="0" checked/>
+              <label for="debtor_no">No</label>
+              <input type="radio" name="debtor" id="debtor_yes" value="1"/>
+              <label for="debtor_yes">Yes</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Scholarship Holder</label>
+            <div class="toggle-group">
+              <input type="radio" name="scholarship" id="sch_no" value="0" checked/>
+              <label for="sch_no">No</label>
+              <input type="radio" name="scholarship" id="sch_yes" value="1"/>
+              <label for="sch_yes">Yes</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Displaced Student</label>
+            <div class="toggle-group">
+              <input type="radio" name="displaced" id="dis_no" value="0" checked/>
+              <label for="dis_no">No</label>
+              <input type="radio" name="displaced" id="dis_yes" value="1"/>
+              <label for="dis_yes">Yes</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3: Personal Info -->
+      <div class="section">
+        <div class="section-title">👤 Personal Information</div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Age at Enrollment</label>
+            <input type="number" id="age" value="20" min="17" max="70"/>
+          </div>
+          <div class="field">
+            <label>Gender</label>
+            <select id="gender">
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Admission Grade (0–200)</label>
+            <input type="number" id="admission_grade" value="130" min="0" max="200" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>Previous Qualification Grade</label>
+            <input type="number" id="prev_qual_grade" value="130" min="0" max="200" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>Marital Status</label>
+            <select id="marital_status">
+              <option value="1">Single</option>
+              <option value="2">Married</option>
+              <option value="3">Widower</option>
+              <option value="4">Divorced</option>
+              <option value="5">Facto Union</option>
+              <option value="6">Legally Separated</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>International Student</label>
+            <div class="toggle-group">
+              <input type="radio" name="intl" id="intl_no" value="0" checked/>
+              <label for="intl_no">No</label>
+              <input type="radio" name="intl" id="intl_yes" value="1"/>
+              <label for="intl_yes">Yes</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Economic Context -->
+      <div class="section">
+        <div class="section-title">📈 Economic Context</div>
+        <div class="form-grid three">
+          <div class="field">
+            <label>Unemployment Rate (%)</label>
+            <input type="number" id="unemployment" value="10.8" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>Inflation Rate (%)</label>
+            <input type="number" id="inflation" value="1.4" step="0.1"/>
+          </div>
+          <div class="field">
+            <label>GDP</label>
+            <input type="number" id="gdp" value="1.74" step="0.01"/>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-predict" id="predictBtn" onclick="predict()">
+        Predict Dropout Risk
+      </button>
+      <div class="error-box" id="errorBox"></div>
+
+    </div><!-- end left -->
+
+    <!-- ── RIGHT: Result Panel ── -->
+    <div class="result-panel">
+      <div class="section-title">📊 Prediction Result</div>
+
+      <div class="result-placeholder" id="placeholder">
+        <div class="icon">🎯</div>
+        <p>Fill in the student's details and click <strong>Predict</strong> to see the dropout risk assessment.</p>
+      </div>
+
+      <div class="result-content" id="resultContent">
+        <div id="riskBadge" class="risk-badge"></div>
+
+        <div class="prob-display">
+          <div id="probNumber" class="prob-number">0%</div>
+          <div class="prob-label">Dropout Probability</div>
+        </div>
+
+        <div class="prob-bar-wrap">
+          <div class="prob-bar" id="probBar"></div>
+        </div>
+
+        <div class="result-message" id="resultMessage"></div>
+
+        <div class="factors" id="factorsBox"></div>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+</div><!-- end container -->
+
+<script>
+async function predict() {
+  const btn = document.getElementById('predictBtn');
+  const errBox = document.getElementById('errorBox');
+
+  // Gather form values
+  const data = {
+    cu1_enrolled:     val('cu1_enrolled'),
+    cu1_approved:     val('cu1_approved'),
+    cu1_grade:        val('cu1_grade'),
+    cu1_evaluations:  val('cu1_evaluations'),
+    cu1_credited:     val('cu1_credited'),
+    cu1_without_eval: val('cu1_without_eval'),
+    cu2_enrolled:     val('cu2_enrolled'),
+    cu2_approved:     val('cu2_approved'),
+    cu2_grade:        val('cu2_grade'),
+    cu2_evaluations:  val('cu2_evaluations'),
+    cu2_credited:     val('cu2_credited'),
+    cu2_without_eval: val('cu2_without_eval'),
+    tuition_up_to_date: radio('tuition'),
+    debtor:           radio('debtor'),
+    scholarship:      radio('scholarship'),
+    displaced:        radio('displaced'),
+    age:              val('age'),
+    gender:           val('gender'),
+    admission_grade:  val('admission_grade'),
+    prev_qual_grade:  val('prev_qual_grade'),
+    marital_status:   val('marital_status'),
+    intl:             radio('intl'),
+    unemployment:     val('unemployment'),
+    inflation:        val('inflation'),
+    gdp:              val('gdp'),
+  };
+
+  // Loading state
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Analyzing...';
+  errBox.style.display = 'none';
+
+  try {
+    const res  = await fetch('/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+
+    if (!json.success) throw new Error(json.error);
+
+    showResult(json, data);
+
+  } catch (e) {
+    errBox.textContent = '❌ Error: ' + e.message;
+    errBox.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Predict Dropout Risk';
+  }
+}
+
+function showResult(json, data) {
+  const { probability, risk, emoji, message } = json;
+
+  document.getElementById('placeholder').style.display  = 'none';
+  const rc = document.getElementById('resultContent');
+  rc.classList.add('show');
+
+  // Badge
+  const badge = document.getElementById('riskBadge');
+  badge.className = `risk-badge ${risk}`;
+  badge.innerHTML = `${emoji} ${risk} RISK`;
+
+  // Number
+  const num = document.getElementById('probNumber');
+  num.className = `prob-number ${risk}`;
+  num.textContent = probability + '%';
+
+  // Bar (animate after paint)
+  const bar = document.getElementById('probBar');
+  bar.className = `prob-bar ${risk}`;
+  setTimeout(() => bar.style.width = probability + '%', 50);
+
+  // Message
+  const msg = document.getElementById('resultMessage');
+  msg.className = `result-message ${risk}`;
+  msg.textContent = message;
+
+  // Key factors summary
+  const pass1 = data.cu1_enrolled > 0
+    ? ((data.cu1_approved / data.cu1_enrolled) * 100).toFixed(0) + '%'
+    : 'N/A';
+  const pass2 = data.cu2_enrolled > 0
+    ? ((data.cu2_approved / data.cu2_enrolled) * 100).toFixed(0) + '%'
+    : 'N/A';
+  const finRisk = (data.tuition_up_to_date == 0 ? 1 : 0) + parseInt(data.debtor);
+
+  document.getElementById('factorsBox').innerHTML = `
+    <div class="factors-title">Key Factors Used</div>
+    <div class="factor-item">
+      <span>1st Sem Pass Rate</span>
+      <span class="factor-val">${pass1}</span>
+    </div>
+    <div class="factor-item">
+      <span>2nd Sem Pass Rate</span>
+      <span class="factor-val">${pass2}</span>
+    </div>
+    <div class="factor-item">
+      <span>Financial Risk Score</span>
+      <span class="factor-val">${finRisk} / 2</span>
+    </div>
+    <div class="factor-item">
+      <span>Grade Trend</span>
+      <span class="factor-val">${data.cu2_grade >= data.cu1_grade ? '📈 Improving' : '📉 Declining'}</span>
+    </div>
+    <div class="factor-item">
+      <span>Tuition Status</span>
+      <span class="factor-val">${data.tuition_up_to_date == 1 ? '✅ Paid' : '❌ Overdue'}</span>
+    </div>
+  `;
+}
+
+function val(id)   { return document.getElementById(id).value; }
+function radio(nm) { return document.querySelector(`input[name="${nm}"]:checked`)?.value ?? 0; }
+</script>
 </body>
 </html>

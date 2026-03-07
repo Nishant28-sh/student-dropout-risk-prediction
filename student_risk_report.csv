@@ -1,0 +1,886 @@
+,Dropout_Probability_%,Risk_Level,Predicted,Actual,Correct
+370,100.0,🔴 High Risk,Dropout,Dropout,✅
+398,100.0,🔴 High Risk,Dropout,Dropout,✅
+341,100.0,🔴 High Risk,Dropout,Dropout,✅
+435,100.0,🔴 High Risk,Dropout,Dropout,✅
+368,100.0,🔴 High Risk,Dropout,Dropout,✅
+360,100.0,🔴 High Risk,Dropout,Dropout,✅
+37,100.0,🔴 High Risk,Dropout,Dropout,✅
+822,100.0,🔴 High Risk,Dropout,Dropout,✅
+52,100.0,🔴 High Risk,Dropout,Dropout,✅
+51,100.0,🔴 High Risk,Dropout,Dropout,✅
+428,100.0,🔴 High Risk,Dropout,Not Dropout,❌
+809,100.0,🔴 High Risk,Dropout,Dropout,✅
+281,100.0,🔴 High Risk,Dropout,Dropout,✅
+283,100.0,🔴 High Risk,Dropout,Dropout,✅
+548,100.0,🔴 High Risk,Dropout,Dropout,✅
+288,100.0,🔴 High Risk,Dropout,Dropout,✅
+556,100.0,🔴 High Risk,Dropout,Dropout,✅
+271,100.0,🔴 High Risk,Dropout,Dropout,✅
+550,100.0,🔴 High Risk,Dropout,Dropout,✅
+553,100.0,🔴 High Risk,Dropout,Dropout,✅
+122,100.0,🔴 High Risk,Dropout,Dropout,✅
+745,100.0,🔴 High Risk,Dropout,Dropout,✅
+734,100.0,🔴 High Risk,Dropout,Dropout,✅
+730,100.0,🔴 High Risk,Dropout,Dropout,✅
+568,100.0,🔴 High Risk,Dropout,Dropout,✅
+90,100.0,🔴 High Risk,Dropout,Dropout,✅
+780,100.0,🔴 High Risk,Dropout,Dropout,✅
+770,100.0,🔴 High Risk,Dropout,Dropout,✅
+298,100.0,🔴 High Risk,Dropout,Dropout,✅
+759,100.0,🔴 High Risk,Dropout,Dropout,✅
+505,100.0,🔴 High Risk,Dropout,Dropout,✅
+779,100.0,🔴 High Risk,Dropout,Dropout,✅
+790,100.0,🔴 High Risk,Dropout,Dropout,✅
+336,100.0,🔴 High Risk,Dropout,Dropout,✅
+475,100.0,🔴 High Risk,Dropout,Dropout,✅
+471,100.0,🔴 High Risk,Dropout,Dropout,✅
+83,100.0,🔴 High Risk,Dropout,Dropout,✅
+79,100.0,🔴 High Risk,Dropout,Dropout,✅
+77,100.0,🔴 High Risk,Dropout,Dropout,✅
+332,100.0,🔴 High Risk,Dropout,Dropout,✅
+256,100.0,🔴 High Risk,Dropout,Dropout,✅
+715,100.0,🔴 High Risk,Dropout,Dropout,✅
+252,100.0,🔴 High Risk,Dropout,Dropout,✅
+860,100.0,🔴 High Risk,Dropout,Dropout,✅
+393,100.0,🔴 High Risk,Dropout,Dropout,✅
+629,100.0,🔴 High Risk,Dropout,Dropout,✅
+680,100.0,🔴 High Risk,Dropout,Dropout,✅
+676,100.0,🔴 High Risk,Dropout,Dropout,✅
+693,100.0,🔴 High Risk,Dropout,Dropout,✅
+149,100.0,🔴 High Risk,Dropout,Dropout,✅
+211,100.0,🔴 High Risk,Dropout,Dropout,✅
+857,100.0,🔴 High Risk,Dropout,Dropout,✅
+854,100.0,🔴 High Risk,Dropout,Dropout,✅
+395,100.0,🔴 High Risk,Dropout,Dropout,✅
+880,100.0,🔴 High Risk,Dropout,Dropout,✅
+16,100.0,🔴 High Risk,Dropout,Dropout,✅
+164,100.0,🔴 High Risk,Dropout,Dropout,✅
+670,100.0,🔴 High Risk,Dropout,Dropout,✅
+9,100.0,🔴 High Risk,Dropout,Dropout,✅
+238,100.0,🔴 High Risk,Dropout,Dropout,✅
+592,100.0,🔴 High Risk,Dropout,Dropout,✅
+232,100.0,🔴 High Risk,Dropout,Dropout,✅
+130,100.0,🔴 High Risk,Dropout,Dropout,✅
+719,100.0,🔴 High Risk,Dropout,Dropout,✅
+525,100.0,🔴 High Risk,Dropout,Dropout,✅
+276,100.0,🔴 High Risk,Dropout,Dropout,✅
+521,100.0,🔴 High Risk,Dropout,Dropout,✅
+105,100.0,🔴 High Risk,Dropout,Dropout,✅
+323,99.9,🔴 High Risk,Dropout,Dropout,✅
+365,99.9,🔴 High Risk,Dropout,Dropout,✅
+2,99.9,🔴 High Risk,Dropout,Dropout,✅
+401,99.9,🔴 High Risk,Dropout,Dropout,✅
+640,99.9,🔴 High Risk,Dropout,Dropout,✅
+12,99.9,🔴 High Risk,Dropout,Dropout,✅
+213,99.9,🔴 High Risk,Dropout,Dropout,✅
+772,99.9,🔴 High Risk,Dropout,Dropout,✅
+97,99.9,🔴 High Risk,Dropout,Dropout,✅
+874,99.9,🔴 High Risk,Dropout,Dropout,✅
+167,99.9,🔴 High Risk,Dropout,Dropout,✅
+641,99.9,🔴 High Risk,Dropout,Dropout,✅
+241,99.9,🔴 High Risk,Dropout,Dropout,✅
+621,99.9,🔴 High Risk,Dropout,Dropout,✅
+717,99.9,🔴 High Risk,Dropout,Dropout,✅
+702,99.9,🔴 High Risk,Dropout,Dropout,✅
+694,99.9,🔴 High Risk,Dropout,Dropout,✅
+604,99.9,🔴 High Risk,Dropout,Dropout,✅
+133,99.9,🔴 High Risk,Dropout,Dropout,✅
+557,99.9,🔴 High Risk,Dropout,Dropout,✅
+576,99.9,🔴 High Risk,Dropout,Dropout,✅
+797,99.9,🔴 High Risk,Dropout,Dropout,✅
+514,99.9,🔴 High Risk,Dropout,Dropout,✅
+60,99.9,🔴 High Risk,Dropout,Dropout,✅
+404,99.9,🔴 High Risk,Dropout,Dropout,✅
+330,99.9,🔴 High Risk,Dropout,Dropout,✅
+414,99.9,🔴 High Risk,Dropout,Dropout,✅
+444,99.9,🔴 High Risk,Dropout,Dropout,✅
+710,99.9,🔴 High Risk,Dropout,Dropout,✅
+254,99.9,🔴 High Risk,Dropout,Dropout,✅
+273,99.9,🔴 High Risk,Dropout,Dropout,✅
+78,99.9,🔴 High Risk,Dropout,Dropout,✅
+6,99.8,🔴 High Risk,Dropout,Dropout,✅
+50,99.8,🔴 High Risk,Dropout,Dropout,✅
+345,99.8,🔴 High Risk,Dropout,Dropout,✅
+862,99.8,🔴 High Risk,Dropout,Dropout,✅
+291,99.8,🔴 High Risk,Dropout,Dropout,✅
+334,99.8,🔴 High Risk,Dropout,Dropout,✅
+767,99.8,🔴 High Risk,Dropout,Dropout,✅
+166,99.8,🔴 High Risk,Dropout,Dropout,✅
+29,99.8,🔴 High Risk,Dropout,Dropout,✅
+500,99.8,🔴 High Risk,Dropout,Dropout,✅
+10,99.7,🔴 High Risk,Dropout,Dropout,✅
+596,99.7,🔴 High Risk,Dropout,Dropout,✅
+71,99.7,🔴 High Risk,Dropout,Dropout,✅
+502,99.7,🔴 High Risk,Dropout,Dropout,✅
+515,99.7,🔴 High Risk,Dropout,Dropout,✅
+73,99.7,🔴 High Risk,Dropout,Dropout,✅
+331,99.7,🔴 High Risk,Dropout,Dropout,✅
+864,99.7,🔴 High Risk,Dropout,Dropout,✅
+438,99.7,🔴 High Risk,Dropout,Not Dropout,❌
+807,99.7,🔴 High Risk,Dropout,Dropout,✅
+817,99.6,🔴 High Risk,Dropout,Dropout,✅
+38,99.6,🔴 High Risk,Dropout,Dropout,✅
+55,99.6,🔴 High Risk,Dropout,Dropout,✅
+447,99.6,🔴 High Risk,Dropout,Dropout,✅
+27,99.6,🔴 High Risk,Dropout,Dropout,✅
+235,99.6,🔴 High Risk,Dropout,Dropout,✅
+796,99.6,🔴 High Risk,Dropout,Not Dropout,❌
+870,99.6,🔴 High Risk,Dropout,Not Dropout,❌
+495,99.5,🔴 High Risk,Dropout,Dropout,✅
+786,99.5,🔴 High Risk,Dropout,Dropout,✅
+138,99.5,🔴 High Risk,Dropout,Dropout,✅
+628,99.5,🔴 High Risk,Dropout,Dropout,✅
+648,99.5,🔴 High Risk,Dropout,Dropout,✅
+436,99.5,🔴 High Risk,Dropout,Dropout,✅
+4,99.5,🔴 High Risk,Dropout,Dropout,✅
+48,99.5,🔴 High Risk,Dropout,Dropout,✅
+750,99.5,🔴 High Risk,Dropout,Dropout,✅
+33,99.5,🔴 High Risk,Dropout,Dropout,✅
+683,99.4,🔴 High Risk,Dropout,Dropout,✅
+768,99.4,🔴 High Risk,Dropout,Dropout,✅
+799,99.4,🔴 High Risk,Dropout,Dropout,✅
+742,99.3,🔴 High Risk,Dropout,Dropout,✅
+185,99.3,🔴 High Risk,Dropout,Dropout,✅
+348,99.3,🔴 High Risk,Dropout,Dropout,✅
+115,99.2,🔴 High Risk,Dropout,Dropout,✅
+137,99.2,🔴 High Risk,Dropout,Dropout,✅
+830,99.2,🔴 High Risk,Dropout,Dropout,✅
+847,99.2,🔴 High Risk,Dropout,Dropout,✅
+602,99.1,🔴 High Risk,Dropout,Dropout,✅
+222,99.1,🔴 High Risk,Dropout,Dropout,✅
+590,99.1,🔴 High Risk,Dropout,Dropout,✅
+589,99.1,🔴 High Risk,Dropout,Dropout,✅
+186,99.0,🔴 High Risk,Dropout,Dropout,✅
+326,99.0,🔴 High Risk,Dropout,Dropout,✅
+140,99.0,🔴 High Risk,Dropout,Dropout,✅
+669,99.0,🔴 High Risk,Dropout,Dropout,✅
+221,98.9,🔴 High Risk,Dropout,Dropout,✅
+392,98.8,🔴 High Risk,Dropout,Not Dropout,❌
+162,98.8,🔴 High Risk,Dropout,Dropout,✅
+380,98.7,🔴 High Risk,Dropout,Not Dropout,❌
+31,98.7,🔴 High Risk,Dropout,Dropout,✅
+588,98.7,🔴 High Risk,Dropout,Dropout,✅
+569,98.7,🔴 High Risk,Dropout,Dropout,✅
+625,98.5,🔴 High Risk,Dropout,Dropout,✅
+181,98.5,🔴 High Risk,Dropout,Not Dropout,❌
+117,98.4,🔴 High Risk,Dropout,Dropout,✅
+667,98.2,🔴 High Risk,Dropout,Dropout,✅
+487,98.1,🔴 High Risk,Dropout,Dropout,✅
+575,98.0,🔴 High Risk,Dropout,Dropout,✅
+459,97.9,🔴 High Risk,Dropout,Dropout,✅
+284,97.9,🔴 High Risk,Dropout,Dropout,✅
+201,97.8,🔴 High Risk,Dropout,Not Dropout,❌
+651,97.7,🔴 High Risk,Dropout,Dropout,✅
+102,97.5,🔴 High Risk,Dropout,Not Dropout,❌
+113,97.5,🔴 High Risk,Dropout,Dropout,✅
+583,97.3,🔴 High Risk,Dropout,Dropout,✅
+681,97.1,🔴 High Risk,Dropout,Dropout,✅
+801,96.6,🔴 High Risk,Dropout,Dropout,✅
+381,96.5,🔴 High Risk,Dropout,Dropout,✅
+873,96.4,🔴 High Risk,Dropout,Not Dropout,❌
+338,96.4,🔴 High Risk,Dropout,Not Dropout,❌
+706,96.4,🔴 High Risk,Dropout,Dropout,✅
+178,96.3,🔴 High Risk,Dropout,Dropout,✅
+443,96.2,🔴 High Risk,Dropout,Dropout,✅
+684,95.8,🔴 High Risk,Dropout,Dropout,✅
+41,95.7,🔴 High Risk,Dropout,Dropout,✅
+245,95.0,🔴 High Risk,Dropout,Not Dropout,❌
+712,94.8,🔴 High Risk,Dropout,Dropout,✅
+231,94.8,🔴 High Risk,Dropout,Dropout,✅
+396,94.7,🔴 High Risk,Dropout,Dropout,✅
+661,94.7,🔴 High Risk,Dropout,Dropout,✅
+757,94.6,🔴 High Risk,Dropout,Dropout,✅
+195,94.4,🔴 High Risk,Dropout,Not Dropout,❌
+28,94.1,🔴 High Risk,Dropout,Not Dropout,❌
+144,94.0,🔴 High Risk,Dropout,Dropout,✅
+538,94.0,🔴 High Risk,Dropout,Not Dropout,❌
+547,92.7,🔴 High Risk,Dropout,Dropout,✅
+510,92.6,🔴 High Risk,Dropout,Not Dropout,❌
+811,92.3,🔴 High Risk,Dropout,Dropout,✅
+362,92.1,🔴 High Risk,Dropout,Dropout,✅
+320,92.0,🔴 High Risk,Dropout,Dropout,✅
+237,91.9,🔴 High Risk,Dropout,Dropout,✅
+673,91.7,🔴 High Risk,Dropout,Not Dropout,❌
+455,91.7,🔴 High Risk,Dropout,Dropout,✅
+566,91.6,🔴 High Risk,Dropout,Dropout,✅
+637,91.3,🔴 High Risk,Dropout,Dropout,✅
+642,91.1,🔴 High Risk,Dropout,Not Dropout,❌
+634,90.6,🔴 High Risk,Dropout,Not Dropout,❌
+738,90.0,🔴 High Risk,Dropout,Dropout,✅
+239,89.8,🔴 High Risk,Dropout,Dropout,✅
+343,89.4,🔴 High Risk,Dropout,Dropout,✅
+509,89.2,🔴 High Risk,Dropout,Not Dropout,❌
+170,89.2,🔴 High Risk,Dropout,Dropout,✅
+44,89.2,🔴 High Risk,Dropout,Dropout,✅
+713,88.9,🔴 High Risk,Dropout,Not Dropout,❌
+842,88.8,🔴 High Risk,Dropout,Dropout,✅
+496,88.6,🔴 High Risk,Dropout,Dropout,✅
+229,88.5,🔴 High Risk,Dropout,Dropout,✅
+425,87.9,🔴 High Risk,Dropout,Dropout,✅
+530,86.9,🔴 High Risk,Dropout,Dropout,✅
+843,85.9,🔴 High Risk,Dropout,Not Dropout,❌
+581,85.6,🔴 High Risk,Dropout,Dropout,✅
+578,84.0,🔴 High Risk,Dropout,Dropout,✅
+282,83.8,🔴 High Risk,Dropout,Dropout,✅
+150,82.9,🔴 High Risk,Dropout,Dropout,✅
+482,82.6,🔴 High Risk,Dropout,Dropout,✅
+354,82.0,🔴 High Risk,Dropout,Dropout,✅
+209,81.4,🔴 High Risk,Dropout,Dropout,✅
+346,80.4,🔴 High Risk,Dropout,Dropout,✅
+782,79.0,🔴 High Risk,Dropout,Dropout,✅
+848,78.0,🔴 High Risk,Dropout,Dropout,✅
+778,77.9,🔴 High Risk,Dropout,Not Dropout,❌
+721,75.6,🔴 High Risk,Dropout,Dropout,✅
+212,74.6,🟡 Medium Risk,Dropout,Dropout,✅
+477,74.4,🟡 Medium Risk,Dropout,Not Dropout,❌
+382,73.6,🟡 Medium Risk,Dropout,Dropout,✅
+403,71.5,🟡 Medium Risk,Dropout,Dropout,✅
+72,70.5,🟡 Medium Risk,Dropout,Not Dropout,❌
+691,70.5,🟡 Medium Risk,Dropout,Not Dropout,❌
+295,70.4,🟡 Medium Risk,Dropout,Not Dropout,❌
+363,69.8,🟡 Medium Risk,Dropout,Dropout,✅
+545,69.3,🟡 Medium Risk,Dropout,Not Dropout,❌
+287,69.2,🟡 Medium Risk,Dropout,Dropout,✅
+678,67.3,🟡 Medium Risk,Dropout,Dropout,✅
+532,67.2,🟡 Medium Risk,Dropout,Not Dropout,❌
+872,67.2,🟡 Medium Risk,Dropout,Dropout,✅
+35,66.7,🟡 Medium Risk,Dropout,Dropout,✅
+460,65.8,🟡 Medium Risk,Dropout,Not Dropout,❌
+836,64.9,🟡 Medium Risk,Dropout,Dropout,✅
+59,63.5,🟡 Medium Risk,Dropout,Not Dropout,❌
+75,63.4,🟡 Medium Risk,Dropout,Dropout,✅
+518,63.1,🟡 Medium Risk,Dropout,Not Dropout,❌
+175,62.1,🟡 Medium Risk,Dropout,Not Dropout,❌
+109,61.0,🟡 Medium Risk,Dropout,Dropout,✅
+225,60.7,🟡 Medium Risk,Dropout,Not Dropout,❌
+618,60.3,🟡 Medium Risk,Dropout,Not Dropout,❌
+108,59.8,🟡 Medium Risk,Dropout,Not Dropout,❌
+188,59.8,🟡 Medium Risk,Dropout,Dropout,✅
+615,59.6,🟡 Medium Risk,Dropout,Dropout,✅
+390,59.5,🟡 Medium Risk,Dropout,Not Dropout,❌
+773,58.9,🟡 Medium Risk,Dropout,Dropout,✅
+127,58.1,🟡 Medium Risk,Dropout,Not Dropout,❌
+781,58.0,🟡 Medium Risk,Dropout,Not Dropout,❌
+163,55.7,🟡 Medium Risk,Dropout,Not Dropout,❌
+411,54.5,🟡 Medium Risk,Dropout,Dropout,✅
+565,52.8,🟡 Medium Risk,Dropout,Dropout,✅
+675,52.0,🟡 Medium Risk,Dropout,Not Dropout,❌
+863,51.3,🟡 Medium Risk,Dropout,Not Dropout,❌
+737,51.1,🟡 Medium Risk,Dropout,Dropout,✅
+7,51.0,🟡 Medium Risk,Dropout,Dropout,✅
+110,49.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+736,49.4,🟢 Low Risk,Not Dropout,Dropout,❌
+86,48.8,🟢 Low Risk,Not Dropout,Dropout,❌
+207,48.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+172,48.0,🟢 Low Risk,Not Dropout,Dropout,❌
+567,44.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+724,43.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+456,42.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+564,42.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+85,41.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+446,41.4,🟢 Low Risk,Not Dropout,Dropout,❌
+474,41.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+473,40.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+497,38.3,🟢 Low Risk,Not Dropout,Dropout,❌
+308,37.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+743,37.5,🟢 Low Risk,Not Dropout,Dropout,❌
+593,37.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+701,37.2,🟢 Low Risk,Not Dropout,Dropout,❌
+672,35.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+155,34.4,🟢 Low Risk,Not Dropout,Dropout,❌
+430,33.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+93,33.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+190,32.5,🟢 Low Risk,Not Dropout,Dropout,❌
+335,32.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+616,31.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+808,30.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+74,29.9,🟢 Low Risk,Not Dropout,Dropout,❌
+723,29.6,🟢 Low Risk,Not Dropout,Dropout,❌
+304,29.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+157,27.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+416,26.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+835,26.6,🟢 Low Risk,Not Dropout,Dropout,❌
+707,26.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+494,25.4,🟢 Low Risk,Not Dropout,Dropout,❌
+159,24.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+373,23.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+168,23.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+652,22.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+305,22.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+92,21.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+478,21.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+39,20.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+823,20.2,🟢 Low Risk,Not Dropout,Dropout,❌
+631,19.7,🟢 Low Risk,Not Dropout,Dropout,❌
+655,19.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+14,19.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+484,19.4,🟢 Low Risk,Not Dropout,Dropout,❌
+145,19.3,🟢 Low Risk,Not Dropout,Dropout,❌
+431,18.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+789,18.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+311,18.3,🟢 Low Risk,Not Dropout,Dropout,❌
+18,18.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+228,17.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+690,16.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+783,15.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+98,15.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+804,15.6,🟢 Low Risk,Not Dropout,Dropout,❌
+501,15.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+196,15.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+698,14.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+179,14.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+399,14.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+700,13.8,🟢 Low Risk,Not Dropout,Dropout,❌
+410,13.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+881,13.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+32,13.0,🟢 Low Risk,Not Dropout,Dropout,❌
+686,12.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+638,12.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+561,12.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+420,12.6,🟢 Low Risk,Not Dropout,Dropout,❌
+461,12.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+100,11.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+62,11.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+327,10.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+587,10.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+200,10.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+802,10.0,🟢 Low Risk,Not Dropout,Dropout,❌
+718,9.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+486,9.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+107,9.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+776,9.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+369,9.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+429,9.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+716,8.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+103,8.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+537,8.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+1,8.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+551,8.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+20,7.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+534,7.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+666,7.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+376,7.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+838,7.6,🟢 Low Risk,Not Dropout,Dropout,❌
+353,7.5,🟢 Low Risk,Not Dropout,Dropout,❌
+342,7.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+182,7.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+135,7.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+752,7.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+378,7.0,🟢 Low Risk,Not Dropout,Dropout,❌
+383,6.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+371,6.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+735,6.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+599,6.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+671,6.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+293,6.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+318,6.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+531,6.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+549,6.2,🟢 Low Risk,Not Dropout,Dropout,❌
+359,6.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+562,6.0,🟢 Low Risk,Not Dropout,Dropout,❌
+819,5.9,🟢 Low Risk,Not Dropout,Dropout,❌
+882,5.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+61,5.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+427,5.4,🟢 Low Risk,Not Dropout,Dropout,❌
+795,5.4,🟢 Low Risk,Not Dropout,Dropout,❌
+422,4.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+571,4.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+839,4.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+746,4.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+224,4.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+442,4.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+479,4.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+653,4.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+187,3.8,🟢 Low Risk,Not Dropout,Dropout,❌
+560,3.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+620,3.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+774,3.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+769,3.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+364,3.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+407,3.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+30,3.2,🟢 Low Risk,Not Dropout,Dropout,❌
+151,3.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+748,3.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+520,3.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+695,3.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+457,3.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+251,3.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+791,3.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+434,3.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+511,2.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+244,2.9,🟢 Low Risk,Not Dropout,Dropout,❌
+726,2.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+173,2.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+688,2.8,🟢 Low Risk,Not Dropout,Dropout,❌
+266,2.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+708,2.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+91,2.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+784,2.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+552,2.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+136,2.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+577,2.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+214,2.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+76,2.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+849,2.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+868,2.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+250,2.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+814,2.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+626,2.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+142,2.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+64,2.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+777,2.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+833,2.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+703,2.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+440,2.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+321,2.1,🟢 Low Risk,Not Dropout,Dropout,❌
+272,2.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+202,2.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+828,2.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+563,2.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+267,1.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+400,1.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+543,1.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+480,1.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+352,1.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+247,1.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+121,1.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+246,1.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+491,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+351,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+555,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+264,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+766,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+498,1.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+827,1.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+755,1.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+584,1.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+523,1.4,🟢 Low Risk,Not Dropout,Dropout,❌
+861,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+512,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+315,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+270,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+279,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+69,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+452,1.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+192,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+554,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+183,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+294,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+344,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+448,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+174,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+704,1.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+527,1.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+296,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+309,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+387,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+580,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+609,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+80,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+756,1.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+869,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+591,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+356,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+751,1.0,🟢 Low Risk,Not Dropout,Dropout,❌
+646,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+558,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+614,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+317,1.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+741,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+462,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+230,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+613,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+728,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+377,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+775,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+84,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+197,0.9,🟢 Low Risk,Not Dropout,Not Dropout,✅
+24,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+504,0.8,🟢 Low Risk,Not Dropout,Dropout,❌
+147,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+274,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+649,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+470,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+803,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+96,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+204,0.8,🟢 Low Risk,Not Dropout,Not Dropout,✅
+328,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+112,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+355,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+771,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+654,0.7,🟢 Low Risk,Not Dropout,Dropout,❌
+665,0.7,🟢 Low Risk,Not Dropout,Dropout,❌
+697,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+659,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+624,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+851,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+171,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+794,0.7,🟢 Low Risk,Not Dropout,Not Dropout,✅
+699,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+205,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+679,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+153,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+290,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+139,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+11,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+408,0.6,🟢 Low Risk,Not Dropout,Dropout,❌
+424,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+67,0.6,🟢 Low Risk,Not Dropout,Dropout,❌
+464,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+394,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+66,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+740,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+123,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+603,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+233,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+234,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+218,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+852,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+483,0.6,🟢 Low Risk,Not Dropout,Not Dropout,✅
+633,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+610,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+650,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+23,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+193,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+131,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+158,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+314,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+732,0.5,🟢 Low Risk,Not Dropout,Dropout,❌
+522,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+184,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+879,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+99,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+257,0.5,🟢 Low Risk,Not Dropout,Not Dropout,✅
+374,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+744,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+43,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+821,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+465,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+169,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+866,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+243,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+21,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+845,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+643,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+535,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+114,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+647,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+574,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+529,0.4,🟢 Low Risk,Not Dropout,Not Dropout,✅
+88,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+813,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+397,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+65,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+765,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+63,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+13,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+840,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+5,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+3,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+47,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+858,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+433,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+466,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+119,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+660,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+663,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+156,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+722,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+165,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+301,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+572,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+227,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+546,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+223,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+630,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+586,0.3,🟢 Low Risk,Not Dropout,Dropout,❌
+242,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+388,0.3,🟢 Low Risk,Not Dropout,Not Dropout,✅
+883,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+867,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+829,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+831,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+792,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+612,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+240,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+812,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+570,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+793,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+68,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+606,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+268,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+696,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+132,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+160,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+853,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+844,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+36,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+313,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+524,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+677,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+657,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+101,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+259,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+627,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+260,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+635,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+439,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+533,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+322,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+517,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+709,0.2,🟢 Low Risk,Not Dropout,Dropout,❌
+124,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+499,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+299,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+300,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+472,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+333,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+492,0.2,🟢 Low Risk,Not Dropout,Not Dropout,✅
+17,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+865,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+876,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+871,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+0,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+826,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+379,0.1,🟢 Low Risk,Not Dropout,Dropout,❌
+878,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+385,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+805,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+619,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+269,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+810,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+611,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+357,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+349,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+437,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+261,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+639,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+220,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+815,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+81,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+787,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+788,0.1,🟢 Low Risk,Not Dropout,Dropout,❌
+540,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+53,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+415,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+559,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+816,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+623,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+367,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+265,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+57,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+607,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+605,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+601,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+594,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+451,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+453,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+454,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+458,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+754,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+463,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+764,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+758,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+286,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+275,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+285,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+347,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+89,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+111,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+104,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+539,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+644,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+493,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+129,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+126,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+739,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+526,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+687,0.1,🟢 Low Risk,Not Dropout,Dropout,❌
+674,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+469,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+476,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+203,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+449,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+441,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+658,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+516,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+297,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+310,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+312,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+729,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+731,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+325,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+733,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+329,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+177,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+711,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+508,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+176,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+152,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+148,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+489,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+692,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+705,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+856,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+485,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+49,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+841,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+42,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+34,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+832,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+837,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+406,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+253,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+249,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+850,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+26,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+25,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+846,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+391,0.1,🟢 Low Risk,Not Dropout,Not Dropout,✅
+389,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+19,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+22,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+855,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+248,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+255,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+579,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+582,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+405,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+409,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+40,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+45,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+46,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+834,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+316,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+319,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+488,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+154,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+161,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+714,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+720,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+134,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+506,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+507,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+513,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+292,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+146,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+306,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+307,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+141,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+143,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+725,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+727,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+324,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+337,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+467,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+468,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+519,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+189,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+191,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+682,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+685,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+689,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+490,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+503,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+481,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+116,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+118,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+120,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+125,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+128,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+747,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+445,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+450,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+199,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+206,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+208,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+662,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+664,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+668,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+180,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+302,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+303,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+749,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+753,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+760,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+761,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+762,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+763,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+645,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+656,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+194,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+198,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+528,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+277,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+278,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+280,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+289,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+536,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+106,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+82,0.0,🟢 Low Risk,Not Dropout,Dropout,❌
+87,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+94,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+95,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+426,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+432,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+339,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+340,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+350,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+258,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+210,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+215,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+216,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+217,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+219,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+632,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+636,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+785,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+70,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+798,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+800,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+806,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+573,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+236,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+617,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+622,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+541,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+542,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+544,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+54,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+412,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+413,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+417,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+358,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+361,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+366,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+418,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+419,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+421,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+423,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+585,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+595,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+597,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+598,0.0,🟢 Low Risk,Not Dropout,Dropout,❌
+600,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+608,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+226,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+262,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+263,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+56,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+58,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+818,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+820,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+824,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+825,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+372,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+375,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+384,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+402,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+15,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+859,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+8,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+386,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+877,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+875,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
+884,0.0,🟢 Low Risk,Not Dropout,Not Dropout,✅
