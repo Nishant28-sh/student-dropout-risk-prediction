@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050818;
+  --surface: #0d1117;
+  --card: #111827;
+  --card-hover: #162032;
+  --border: #1e2d45;
+  --border-glow: #2a4a7f;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --accent-glow: rgba(37, 99, 235, 0.25);
+  --text: #f0f4ff;
+  --text-muted: #6b7a99;
+  --text-dim: #3d4f6b;
+  --green: #10b981;
+  --green-glow: rgba(16, 185, 129, 0.2);
+  --yellow: #f59e0b;
+  --yellow-glow: rgba(245, 158, 11, 0.2);
+  --red: #ef4444;
+  --red-glow: rgba(239, 68, 68, 0.2);
+  --gold: #fbbf24;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.font-sans {
+  font-family: var(--font-body), sans-serif;
+}
+
+.font-serif, h1, h2, h3, .font-display {
+  font-family: var(--font-display), serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Custom interactive classes */
+.glass-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.glass-card:hover {
+  background-color: var(--card-hover);
+  border-color: var(--border-glow);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 0 15px var(--accent-glow);
+  transform: translateY(-6px) scale(1.01);
+}
+
+.focus-ring:focus-within, .focus-ring:focus {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+.glass-panel {
+  background: rgba(13, 17, 23, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+/* Form Input Glow */
+.input-field {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.input-field:focus {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  outline: none;
+}
+
+/* Hide default spinners in number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-glow);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent);
+  color: white;
+}
