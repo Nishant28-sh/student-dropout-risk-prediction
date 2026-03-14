@@ -9,7 +9,7 @@ A production-ready, full-stack web application that uses machine learning to ide
 
 ## 🌟 Features
 
-- **🔮 xuuuAI-Powered Predictions**: Trained on UCI's Student Dropout dataset with 85%+ accuracy
+- **🔮 AI-Powered Predictions**: Trained on UCI's Student Dropout dataset with 85%+ accuracy
 - **📊 Interactive Dashboard**: Real-time analytics, risk distributions, and trend analysis
 - **🎯 Personalized Interventions**: Rule-based recommendations for at-risk students
 - **🔐 Role-Based Access**: Admin, Educator, and Viewer roles with JWT authentication
