@@ -3,479 +3,914 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Dropout Risk Predictor</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>EduRisk · Student Dropout Prediction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0f1117;
-      --surface:   #181c27;
-      --card:      #1e2335;
-      --border:    #2a3050;
-      --accent:    #4f8ef7;
-      --accent2:   #7c5cbf;
-      --text:      #e8ecf4;
-      --muted:     #7a849e;
-      --green:     #34c98a;
-      --yellow:    #f5a623;
-      --red:       #f25c5c;
-      --radius:    14px;
+      --navy:       #0d1f3c;
+      --teal:       #0a7c6e;
+      --teal-light: #0fa88f;
+      --teal-pale:  #e6f7f5;
+      --amber:      #e8860a;
+      --amber-pale: #fef3e2;
+      --red:        #c0392b;
+      --red-pale:   #fdecea;
+      --green:      #1a7a4a;
+      --green-pale: #e8f5ee;
+      --paper:      #f7f8fc;
+      --white:      #ffffff;
+      --border:     #dde2ef;
+      --border-mid: #c4cce0;
+      --text:       #1a2340;
+      --text-mid:   #4a5568;
+      --text-soft:  #8896b3;
+      --shadow-sm:  0 1px 4px rgba(13,31,60,0.06);
+      --shadow-md:  0 4px 16px rgba(13,31,60,0.1);
+      --shadow-lg:  0 12px 40px rgba(13,31,60,0.14);
+      --radius:     12px;
+      --radius-sm:  8px;
     }
 
     body {
-      background: var(--bg);
+      background: var(--paper);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Sora', sans-serif;
       font-weight: 400;
       min-height: 100vh;
-      padding-bottom: 60px;
     }
 
-    /* ── Header ── */
+    /* ═══════════════════════════════
+       HEADER
+    ═══════════════════════════════ */
     header {
-      background: linear-gradient(135deg, #141829 0%, #1a1f38 60%, #111524 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 28px 40px;
+      background: var(--navy);
+      padding: 0 40px;
       display: flex;
       align-items: center;
-      gap: 16px;
+      height: 68px;
+      gap: 0;
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
+      z-index: 200;
+      box-shadow: 0 2px 20px rgba(13,31,60,0.35);
     }
-    .logo {
-      width: 44px; height: 44px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border-radius: 12px;
-      display: grid; place-items: center;
-      font-size: 22px;
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-light));
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
       flex-shrink: 0;
-      box-shadow: 0 4px 20px rgba(79,142,247,0.3);
+      position: relative;
+      overflow: hidden;
     }
-    header h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #e8ecf4, #a0b0d0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .logo-mark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
     }
-    header p {
+    .logo-mark svg { width: 20px; height: 20px; }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+    .brand-dot { color: var(--teal-light); }
+
+    .header-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.12);
+      margin: 0 24px;
+    }
+
+    .header-subtitle {
       font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 2px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      letter-spacing: 0.02em;
     }
-    .badge {
+
+    .header-right {
       margin-left: auto;
-      background: rgba(79,142,247,0.12);
-      border: 1px solid rgba(79,142,247,0.3);
-      color: var(--accent);
-      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .model-chip {
+      background: rgba(10,124,110,0.25);
+      border: 1px solid rgba(10,168,143,0.35);
+      color: #4dd9c7;
+      font-size: 0.69rem;
       font-weight: 600;
       padding: 5px 12px;
       border-radius: 20px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .model-chip::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #4dd9c7;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #4dd9c7;
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
-    /* ── Layout ── */
-    .container {
-      max-width: 1060px;
+    .accuracy-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.69rem;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ═══════════════════════════════
+       TOP BANNER
+    ═══════════════════════════════ */
+    .top-banner {
+      background: linear-gradient(135deg, #0d2347 0%, #0a3d6b 50%, #0d2347 100%);
+      padding: 36px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(10,168,143,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .top-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(232,134,10,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .banner-content {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
     }
 
-    .grid {
+    .banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .banner-text p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .banner-stats {
+      display: flex;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+    .stat-box {
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      min-width: 90px;
+    }
+    .stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-val span { color: var(--teal-light); font-size: 1rem; }
+    .stat-lbl {
+      font-size: 0.66rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════
+       LAYOUT
+    ═══════════════════════════════ */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+    }
+
+    .main-grid {
       display: grid;
-      grid-template-columns: 1fr 360px;
+      grid-template-columns: 1fr 340px;
       gap: 24px;
       align-items: start;
     }
 
-    /* ── Section cards ── */
-    .section {
-      background: var(--card);
+    /* ═══════════════════════════════
+       SECTION CARDS
+    ═══════════════════════════════ */
+    .card {
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
-      margin-bottom: 20px;
-      animation: fadeUp 0.4s ease both;
+      padding: 26px 28px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      animation: riseIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    .section:nth-child(2) { animation-delay: 0.07s; }
-    .section:nth-child(3) { animation-delay: 0.14s; }
+    .card:nth-child(1) { animation-delay: 0.05s; }
+    .card:nth-child(2) { animation-delay: 0.12s; }
+    .card:nth-child(3) { animation-delay: 0.19s; }
+    .card:nth-child(4) { animation-delay: 0.26s; }
+    .card:nth-child(5) { animation-delay: 0.33s; }
 
-    .section-title {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
+    .card-header {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+      gap: 10px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
 
-    /* ── Form grid ── */
+    .card-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .card-icon.teal   { background: var(--teal-pale); }
+    .card-icon.amber  { background: var(--amber-pale); }
+    .card-icon.navy   { background: #eef1f8; }
+    .card-icon.green  { background: var(--green-pale); }
+
+    .card-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .card-sub {
+      font-size: 0.7rem;
+      color: var(--text-soft);
+      margin-top: 1px;
+    }
+
+    /* ═══════════════════════════════
+       FORM ELEMENTS
+    ═══════════════════════════════ */
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
-    .form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-grid.cols3 { grid-template-columns: 1fr 1fr 1fr; }
+    .form-grid.cols4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 
     .field {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
-    .field.span2 { grid-column: span 2; }
 
-    label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.03em;
+    .field-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .field-hint {
+      font-size: 0.65rem;
+      color: var(--text-soft);
+      margin-top: -3px;
     }
 
     input[type="number"],
     select {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--paper);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
       color: var(--text);
-      font-family: inherit;
+      font-family: 'Sora', inherit;
       font-size: 0.88rem;
+      font-weight: 500;
       padding: 10px 14px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.18s;
       width: 100%;
-      appearance: none;
       -webkit-appearance: none;
+      appearance: none;
     }
     input[type="number"]:focus,
     select:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(79,142,247,0.12);
+      border-color: var(--teal);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(10,124,110,0.1);
     }
+    input[type="number"]:hover,
+    select:hover {
+      border-color: var(--border-mid);
+      background: var(--white);
+    }
+
     select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a849e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%238896b3' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 12px center;
+      background-position: right 13px center;
       padding-right: 36px;
       cursor: pointer;
     }
 
-    /* ── Toggle pills ── */
-    .toggle-group {
+    /* ═══════════════════════════════
+       TOGGLE PILLS
+    ═══════════════════════════════ */
+    .toggle-row {
       display: flex;
       gap: 6px;
     }
-    .toggle-group input[type="radio"] { display: none; }
-    .toggle-group label {
+    .toggle-row input[type="radio"] { display: none; }
+    .toggle-row label {
       flex: 1;
       text-align: center;
-      padding: 9px 0;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      padding: 9px 8px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
-      background: var(--surface);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      background: var(--paper);
       transition: all 0.18s;
       letter-spacing: 0;
+      user-select: none;
     }
-    .toggle-group input[type="radio"]:checked + label {
-      background: rgba(79,142,247,0.15);
-      border-color: var(--accent);
-      color: var(--accent);
+    .toggle-row input[type="radio"]:checked + label {
+      background: var(--teal-pale);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .toggle-row label:hover {
+      border-color: var(--teal);
+      color: var(--teal);
     }
 
-    /* ── Submit button ── */
+    /* ═══════════════════════════════
+       SEMESTER COLUMNS LAYOUT
+    ═══════════════════════════════ */
+    .sem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .sem-col {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .sem-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sem-label.s2 { color: var(--amber); }
+    .sem-col .form-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* ═══════════════════════════════
+       PREDICT BUTTON
+    ═══════════════════════════════ */
     .btn-predict {
       width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 17px 24px;
+      background: var(--navy);
       border: none;
-      border-radius: 10px;
+      border-radius: var(--radius);
       color: #fff;
-      font-family: inherit;
-      font-size: 0.95rem;
+      font-family: 'Sora', sans-serif;
+      font-size: 0.92rem;
       font-weight: 600;
       cursor: pointer;
-      letter-spacing: 0.02em;
-      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(79,142,247,0.25);
-      margin-top: 8px;
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
-    .btn-predict:hover  { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(79,142,247,0.35); }
-    .btn-predict:active { transform: translateY(0); }
+    .btn-predict::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,168,143,0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .btn-predict:hover { background: #162e56; box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+    .btn-predict:hover::before { opacity: 1; }
+    .btn-predict:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
     .btn-predict:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
-    /* ── Sticky result panel ── */
+    .btn-icon {
+      width: 28px; height: 28px;
+      background: rgba(10,168,143,0.25);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+    }
+
+    /* ═══════════════════════════════
+       RESULT PANEL
+    ═══════════════════════════════ */
     .result-panel {
       position: sticky;
-      top: 100px;
-      background: var(--card);
+      top: 84px;
+      animation: riseIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+    }
+
+    .result-card {
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 28px;
-      animation: fadeUp 0.4s ease 0.2s both;
-    }
-
-    .result-placeholder {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--muted);
-    }
-    .result-placeholder .icon { font-size: 48px; margin-bottom: 14px; opacity: 0.4; }
-    .result-placeholder p { font-size: 0.85rem; line-height: 1.6; }
-
-    /* ── Result display ── */
-    .result-content { display: none; }
-    .result-content.show { display: block; animation: fadeUp 0.3s ease; }
-
-    .risk-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .risk-badge.HIGH   { background: rgba(242,92,92,0.15);  color: var(--red);    border: 1px solid rgba(242,92,92,0.3); }
-    .risk-badge.MEDIUM { background: rgba(245,166,35,0.15); color: var(--yellow); border: 1px solid rgba(245,166,35,0.3); }
-    .risk-badge.LOW    { background: rgba(52,201,138,0.15); color: var(--green);  border: 1px solid rgba(52,201,138,0.3); }
-
-    .prob-display {
-      text-align: center;
-      margin: 24px 0;
-    }
-    .prob-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 4rem;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-    .prob-number.HIGH   { color: var(--red); }
-    .prob-number.MEDIUM { color: var(--yellow); }
-    .prob-number.LOW    { color: var(--green); }
-    .prob-label {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* ── Progress bar ── */
-    .prob-bar-wrap {
-      background: var(--surface);
-      border-radius: 6px;
-      height: 8px;
       overflow: hidden;
-      margin: 16px 0;
+      box-shadow: var(--shadow-md);
     }
-    .prob-bar {
-      height: 100%;
-      border-radius: 6px;
-      transition: width 0.8s cubic-bezier(.4,0,.2,1);
-      width: 0%;
-    }
-    .prob-bar.HIGH   { background: linear-gradient(90deg, #f25c5c, #ff8a80); }
-    .prob-bar.MEDIUM { background: linear-gradient(90deg, #f5a623, #ffd54f); }
-    .prob-bar.LOW    { background: linear-gradient(90deg, #34c98a, #69f0ae); }
 
-    .result-message {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 1.6;
-      background: var(--surface);
-      border-radius: 8px;
-      padding: 14px;
-      margin-top: 16px;
-      border-left: 3px solid var(--border);
+    .result-topbar {
+      background: var(--navy);
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .result-message.HIGH   { border-left-color: var(--red); }
-    .result-message.MEDIUM { border-left-color: var(--yellow); }
-    .result-message.LOW    { border-left-color: var(--green); }
-
-    /* ── Key factors ── */
-    .factors {
-      margin-top: 20px;
-    }
-    .factors-title {
-      font-size: 0.68rem;
+    .result-topbar-title {
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(255,255,255,0.55);
+    }
+    .result-topbar-icon { font-size: 16px; }
+
+    .result-body { padding: 24px; }
+
+    /* ── Placeholder ── */
+    .placeholder {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .placeholder-art {
+      width: 80px; height: 80px;
+      margin: 0 auto 20px;
+      background: var(--teal-pale);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+    }
+    .placeholder h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
       margin-bottom: 10px;
     }
-    .factor-item {
+    .placeholder p {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      line-height: 1.65;
+    }
+
+    /* ── Result Display ── */
+    .result-display { display: none; }
+    .result-display.visible { display: block; animation: riseIn 0.35s ease; }
+
+    /* Risk Header */
+    .risk-header {
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .risk-header.HIGH   { background: var(--red-pale);   border-left: 4px solid var(--red); }
+    .risk-header.MEDIUM { background: var(--amber-pale); border-left: 4px solid var(--amber); }
+    .risk-header.LOW    { background: var(--green-pale); border-left: 4px solid var(--green); }
+
+    .risk-emoji { font-size: 26px; flex-shrink: 0; }
+
+    .risk-text-wrap {}
+    .risk-level {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      line-height: 1.1;
+    }
+    .risk-level.HIGH   { color: var(--red); }
+    .risk-level.MEDIUM { color: var(--amber); }
+    .risk-level.LOW    { color: var(--green); }
+    .risk-sub {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+      margin-top: 3px;
+    }
+
+    /* Probability Display */
+    .prob-section {
+      text-align: center;
+      margin: 22px 0;
+    }
+    .prob-ring-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 14px;
+    }
+    .prob-ring-wrap svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+    .ring-bg { fill: none; stroke: var(--border); stroke-width: 8; }
+    .ring-fill {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 283;
+      transition: stroke-dashoffset 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                  stroke 0.3s;
+    }
+    .ring-fill.HIGH   { stroke: var(--red); }
+    .ring-fill.MEDIUM { stroke: var(--amber); }
+    .ring-fill.LOW    { stroke: var(--green); }
+
+    .prob-center-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .prob-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+    .prob-num.HIGH   { color: var(--red); }
+    .prob-num.MEDIUM { color: var(--amber); }
+    .prob-num.LOW    { color: var(--green); }
+    .prob-pct { font-size: 0.7rem; color: var(--text-soft); }
+
+    .prob-caption {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Risk Message */
+    .risk-message {
+      font-size: 0.8rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      background: var(--paper);
+      border-radius: var(--radius-sm);
+      padding: 13px 15px;
+      margin-bottom: 20px;
+    }
+
+    /* Factors Table */
+    .factors-title {
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+    .factor-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.78rem;
-      padding: 8px 0;
+      padding: 9px 0;
       border-bottom: 1px solid var(--border);
-      color: var(--text);
+      font-size: 0.78rem;
     }
-    .factor-item:last-child { border-bottom: none; }
-    .factor-val {
-      font-weight: 600;
-      color: var(--accent);
-    }
+    .factor-row:last-child { border-bottom: none; }
+    .factor-name { color: var(--text-mid); }
+    .factor-val  { font-weight: 600; color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; }
 
-    /* ── Error ── */
-    .error-box {
-      background: rgba(242,92,92,0.1);
-      border: 1px solid rgba(242,92,92,0.3);
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 0.83rem;
+    /* ═══════════════════════════════
+       SECOND CARD: GUIDANCE
+    ═══════════════════════════════ */
+    .guidance-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .guidance-header {
+      background: #fafbfd;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+    .guidance-body { padding: 18px 20px; display: none; }
+    .guidance-body.show { display: block; animation: riseIn 0.3s ease; }
+    .guidance-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--text-mid);
+    }
+    .guidance-item:last-child { margin-bottom: 0; }
+    .guidance-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .guidance-dot.high   { background: var(--red-pale);   color: var(--red); }
+    .guidance-dot.medium { background: var(--amber-pale); color: var(--amber); }
+    .guidance-dot.low    { background: var(--green-pale); color: var(--green); }
+
+    /* ═══════════════════════════════
+       ERROR
+    ═══════════════════════════════ */
+    .error-bar {
+      background: var(--red-pale);
+      border: 1px solid rgba(192,57,43,0.25);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.8rem;
       color: var(--red);
       display: none;
       margin-top: 12px;
+      display: none;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* ── Loading spinner ── */
+    /* ═══════════════════════════════
+       SPINNER
+    ═══════════════════════════════ */
     .spinner {
       display: inline-block;
-      width: 18px; height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-top-color: rgba(255,255,255,0.8);
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
-      vertical-align: middle;
-      margin-right: 8px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Responsive ── */
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: 1fr; }
-      .result-panel { position: static; }
-      .form-grid, .form-grid.three { grid-template-columns: 1fr 1fr; }
-      header { padding: 20px; }
+    /* ═══════════════════════════════
+       FOOTER STRIP
+    ═══════════════════════════════ */
+    .footer-strip {
+      background: var(--navy);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.04em;
     }
-    @media (max-width: 500px) {
-      .form-grid, .form-grid.three { grid-template-columns: 1fr; }
-      .field.span2 { grid-column: span 1; }
+
+    /* ═══════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════ */
+    @media (max-width: 900px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .result-panel { position: static; }
+      .sem-grid { grid-template-columns: 1fr; }
+      .banner-stats { display: none; }
+      header { padding: 0 20px; }
+      .top-banner { padding: 28px 20px; }
+      .container { padding: 20px 16px 60px; }
+    }
+    @media (max-width: 600px) {
+      .form-grid.cols3 { grid-template-columns: 1fr 1fr; }
+      .form-grid.cols4 { grid-template-columns: 1fr 1fr; }
+      .sem-col .form-grid { grid-template-columns: 1fr; }
+      .brand-name { font-size: 1.1rem; }
+      .accuracy-chip { display: none; }
     }
   </style>
 </head>
 <body>
 
+<!-- ═══ HEADER ═══ -->
 <header>
-  <div class="logo">🎓</div>
-  <div>
-    <h1>Dropout Risk Predictor</h1>
-    <p>XGBoost model · 88.9% accuracy · Binary classification</p>
+  <a href="#" class="header-brand">
+    <div class="logo-mark">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L13 8H17L14 12L15 18L10 15L5 18L6 12L3 8H7L10 2Z" fill="white" opacity="0.9"/>
+      </svg>
+    </div>
+    <span class="brand-name">Edu<span class="brand-dot">Risk</span></span>
+  </a>
+  <div class="header-divider"></div>
+  <span class="header-subtitle">Faculty Intervention Dashboard</span>
+  <div class="header-right">
+    <span class="accuracy-chip">88.9% Accuracy</span>
+    <span class="model-chip">XGBoost Live</span>
   </div>
-  <span class="badge">Live Model</span>
 </header>
 
-<div class="container">
-  <div class="grid">
+<!-- ═══ BANNER ═══ -->
+<div class="top-banner">
+  <div class="banner-content">
+    <div class="banner-text">
+      <h2>Student Dropout Risk Prediction</h2>
+      <p>Enter academic, financial, and personal data to assess a student's dropout probability and receive tailored intervention recommendations.</p>
+    </div>
+    <div class="banner-stats">
+      <div class="stat-box">
+        <div class="stat-val">88<span>%</span></div>
+        <div class="stat-lbl">Accuracy</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">47</div>
+        <div class="stat-lbl">Features</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">3</div>
+        <div class="stat-lbl">Risk Tiers</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- ── LEFT: Form ── -->
+<!-- ═══ MAIN ═══ -->
+<div class="container">
+  <div class="main-grid">
+
+    <!-- ──────── LEFT COLUMN ──────── -->
     <div>
 
-      <!-- Section 1: Academic Performance -->
-      <div class="section">
-        <div class="section-title">📚 1st Semester Performance</div>
-        <div class="form-grid three">
-          <div class="field">
-            <label>Units Enrolled</label>
-            <input type="number" id="cu1_enrolled" value="6" min="0" max="26"/>
+      <!-- ACADEMIC PERFORMANCE -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon teal">📊</div>
+          <div>
+            <div class="card-title">Academic Performance</div>
+            <div class="card-sub">Curricular unit data for both semesters</div>
           </div>
-          <div class="field">
-            <label>Units Approved</label>
-            <input type="number" id="cu1_approved" value="6" min="0" max="26"/>
+        </div>
+        <div class="sem-grid">
+          <!-- 1st Sem -->
+          <div class="sem-col">
+            <div class="sem-label">◈ 1st Semester</div>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label">Enrolled</label>
+                <input type="number" id="cu1_enrolled" value="6" min="0" max="26"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Approved</label>
+                <input type="number" id="cu1_approved" value="6" min="0" max="26"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Grade <span style="font-weight:400;color:var(--text-soft)">(0–20)</span></label>
+                <input type="number" id="cu1_grade" value="13.0" min="0" max="20" step="0.1"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Evaluations</label>
+                <input type="number" id="cu1_evaluations" value="6" min="0" max="45"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Credited</label>
+                <input type="number" id="cu1_credited" value="0" min="0" max="20"/>
+              </div>
+              <div class="field">
+                <label class="field-label">No Eval</label>
+                <input type="number" id="cu1_without_eval" value="0" min="0" max="12"/>
+              </div>
+            </div>
           </div>
-          <div class="field">
-            <label>Grade (0–20)</label>
-            <input type="number" id="cu1_grade" value="13.0" min="0" max="20" step="0.1"/>
-          </div>
-          <div class="field">
-            <label>Evaluations</label>
-            <input type="number" id="cu1_evaluations" value="6" min="0" max="45"/>
-          </div>
-          <div class="field">
-            <label>Credited</label>
-            <input type="number" id="cu1_credited" value="0" min="0" max="20"/>
-          </div>
-          <div class="field">
-            <label>Without Evaluations</label>
-            <input type="number" id="cu1_without_eval" value="0" min="0" max="12"/>
+          <!-- 2nd Sem -->
+          <div class="sem-col">
+            <div class="sem-label s2">◈ 2nd Semester</div>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label">Enrolled</label>
+                <input type="number" id="cu2_enrolled" value="6" min="0" max="23"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Approved</label>
+                <input type="number" id="cu2_approved" value="6" min="0" max="20"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Grade <span style="font-weight:400;color:var(--text-soft)">(0–20)</span></label>
+                <input type="number" id="cu2_grade" value="13.0" min="0" max="20" step="0.1"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Evaluations</label>
+                <input type="number" id="cu2_evaluations" value="6" min="0" max="33"/>
+              </div>
+              <div class="field">
+                <label class="field-label">Credited</label>
+                <input type="number" id="cu2_credited" value="0" min="0" max="19"/>
+              </div>
+              <div class="field">
+                <label class="field-label">No Eval</label>
+                <input type="number" id="cu2_without_eval" value="0" min="0" max="12"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="section">
-        <div class="section-title">📗 2nd Semester Performance</div>
-        <div class="form-grid three">
-          <div class="field">
-            <label>Units Enrolled</label>
-            <input type="number" id="cu2_enrolled" value="6" min="0" max="23"/>
-          </div>
-          <div class="field">
-            <label>Units Approved</label>
-            <input type="number" id="cu2_approved" value="6" min="0" max="20"/>
-          </div>
-          <div class="field">
-            <label>Grade (0–20)</label>
-            <input type="number" id="cu2_grade" value="13.0" min="0" max="20" step="0.1"/>
-          </div>
-          <div class="field">
-            <label>Evaluations</label>
-            <input type="number" id="cu2_evaluations" value="6" min="0" max="33"/>
-          </div>
-          <div class="field">
-            <label>Credited</label>
-            <input type="number" id="cu2_credited" value="0" min="0" max="19"/>
-          </div>
-          <div class="field">
-            <label>Without Evaluations</label>
-            <input type="number" id="cu2_without_eval" value="0" min="0" max="12"/>
+      <!-- FINANCIAL STATUS -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon amber">💳</div>
+          <div>
+            <div class="card-title">Financial Status</div>
+            <div class="card-sub">Tuition, debts, and scholarship indicators</div>
           </div>
         </div>
-      </div>
-
-      <!-- Section 2: Financial -->
-      <div class="section">
-        <div class="section-title">💳 Financial Status</div>
-        <div class="form-grid">
+        <div class="form-grid cols4">
           <div class="field">
-            <label>Tuition Fees Up To Date</label>
-            <div class="toggle-group">
+            <label class="field-label">Tuition Up To Date</label>
+            <div class="toggle-row">
               <input type="radio" name="tuition" id="tuition_yes" value="1" checked/>
-              <label for="tuition_yes">✅ Yes</label>
+              <label for="tuition_yes">✓ Yes</label>
               <input type="radio" name="tuition" id="tuition_no" value="0"/>
-              <label for="tuition_no">❌ No</label>
+              <label for="tuition_no">✗ No</label>
             </div>
           </div>
           <div class="field">
-            <label>Debtor</label>
-            <div class="toggle-group">
+            <label class="field-label">Debtor</label>
+            <div class="toggle-row">
               <input type="radio" name="debtor" id="debtor_no" value="0" checked/>
               <label for="debtor_no">No</label>
               <input type="radio" name="debtor" id="debtor_yes" value="1"/>
@@ -483,8 +918,8 @@
             </div>
           </div>
           <div class="field">
-            <label>Scholarship Holder</label>
-            <div class="toggle-group">
+            <label class="field-label">Scholarship</label>
+            <div class="toggle-row">
               <input type="radio" name="scholarship" id="sch_no" value="0" checked/>
               <label for="sch_no">No</label>
               <input type="radio" name="scholarship" id="sch_yes" value="1"/>
@@ -492,8 +927,8 @@
             </div>
           </div>
           <div class="field">
-            <label>Displaced Student</label>
-            <div class="toggle-group">
+            <label class="field-label">Displaced</label>
+            <div class="toggle-row">
               <input type="radio" name="displaced" id="dis_no" value="0" checked/>
               <label for="dis_no">No</label>
               <input type="radio" name="displaced" id="dis_yes" value="1"/>
@@ -503,31 +938,29 @@
         </div>
       </div>
 
-      <!-- Section 3: Personal Info -->
-      <div class="section">
-        <div class="section-title">👤 Personal Information</div>
-        <div class="form-grid">
+      <!-- PERSONAL INFORMATION -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon navy">👤</div>
+          <div>
+            <div class="card-title">Student Profile</div>
+            <div class="card-sub">Personal and enrollment details</div>
+          </div>
+        </div>
+        <div class="form-grid cols3">
           <div class="field">
-            <label>Age at Enrollment</label>
+            <label class="field-label">Age at Enrollment</label>
             <input type="number" id="age" value="20" min="17" max="70"/>
           </div>
           <div class="field">
-            <label>Gender</label>
+            <label class="field-label">Gender</label>
             <select id="gender">
               <option value="1">Male</option>
               <option value="0">Female</option>
             </select>
           </div>
           <div class="field">
-            <label>Admission Grade (0–200)</label>
-            <input type="number" id="admission_grade" value="130" min="0" max="200" step="0.1"/>
-          </div>
-          <div class="field">
-            <label>Previous Qualification Grade</label>
-            <input type="number" id="prev_qual_grade" value="130" min="0" max="200" step="0.1"/>
-          </div>
-          <div class="field">
-            <label>Marital Status</label>
+            <label class="field-label">Marital Status</label>
             <select id="marital_status">
               <option value="1">Single</option>
               <option value="2">Married</option>
@@ -538,8 +971,16 @@
             </select>
           </div>
           <div class="field">
-            <label>International Student</label>
-            <div class="toggle-group">
+            <label class="field-label">Admission Grade <span style="font-weight:400;color:var(--text-soft)">(0–200)</span></label>
+            <input type="number" id="admission_grade" value="130" min="0" max="200" step="0.1"/>
+          </div>
+          <div class="field">
+            <label class="field-label">Prev. Qualification Grade</label>
+            <input type="number" id="prev_qual_grade" value="130" min="0" max="200" step="0.1"/>
+          </div>
+          <div class="field">
+            <label class="field-label">International Student</label>
+            <div class="toggle-row">
               <input type="radio" name="intl" id="intl_no" value="0" checked/>
               <label for="intl_no">No</label>
               <input type="radio" name="intl" id="intl_yes" value="1"/>
@@ -547,102 +988,257 @@
             </div>
           </div>
         </div>
+
+        <!-- Dropdowns row -->
+        <div class="form-grid cols4" style="margin-top:14px;">
+          <div class="field">
+            <label class="field-label">Previous Qualification</label>
+            <select id="prev_qual">
+              <option value="1">Secondary education</option>
+              <option value="2">Higher education – bachelor's</option>
+              <option value="3">Higher education – degree</option>
+              <option value="4">Higher education – master's</option>
+              <option value="5">Higher education – doctorate</option>
+              <option value="6">Freq. higher ed.</option>
+              <option value="9">12th year – not completed</option>
+              <option value="10">11th year – not completed</option>
+              <option value="12">Other – 11th year</option>
+              <option value="14">10th year</option>
+              <option value="15">10th year – not completed</option>
+              <option value="19">Basic ed – 3rd cycle</option>
+              <option value="38">Basic ed – 2nd cycle</option>
+              <option value="39">Tech. specialisation</option>
+              <option value="40">Higher ed – degree (1st cycle)</option>
+              <option value="42">Prof. higher tech. course</option>
+              <option value="43">Higher ed – master's (2nd cycle)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Mother's Qualification</label>
+            <select id="mother_qual">
+              <option value="1">Secondary – 12th Year or Eq.</option>
+              <option value="2">Higher Ed – Bachelor's</option>
+              <option value="3">Higher Ed – Degree</option>
+              <option value="4">Higher Ed – Master's</option>
+              <option value="5">Higher Ed – Doctorate</option>
+              <option value="6">Freq. Higher Ed</option>
+              <option value="9">12th Year – Not Completed</option>
+              <option value="10">11th Year – Not Completed</option>
+              <option value="11">7th Year (Old)</option>
+              <option value="12">Other – 11th Year</option>
+              <option value="14">10th Year</option>
+              <option value="18">General commerce course</option>
+              <option value="19">Basic Ed 3rd Cycle</option>
+              <option value="22">Tech.-professional course</option>
+              <option value="26">7th year of schooling</option>
+              <option value="27">2nd cycle of gen. high school</option>
+              <option value="29">9th Year – Not Completed</option>
+              <option value="30">8th year</option>
+              <option value="34">Unknown</option>
+              <option value="35">Can't read or write</option>
+              <option value="36">Can read without 4th yr</option>
+              <option value="37">Basic Ed 1st Cycle</option>
+              <option value="38">Basic Ed 2nd Cycle</option>
+              <option value="39">Tech. Specialisation</option>
+              <option value="40">Higher Ed – Degree (1st cycle)</option>
+              <option value="41">Specialised higher studies</option>
+              <option value="42">Prof. Higher Tech.</option>
+              <option value="43">Higher Ed – Master's (2nd)</option>
+              <option value="44">Higher Ed – Doctorate (3rd)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Father's Qualification</label>
+            <select id="father_qual">
+              <option value="1">Secondary – 12th Year or Eq.</option>
+              <option value="2">Higher Ed – Bachelor's</option>
+              <option value="3">Higher Ed – Degree</option>
+              <option value="4">Higher Ed – Master's</option>
+              <option value="5">Higher Ed – Doctorate</option>
+              <option value="6">Freq. Higher Ed</option>
+              <option value="9">12th Year – Not Completed</option>
+              <option value="10">11th Year – Not Completed</option>
+              <option value="11">7th Year (Old)</option>
+              <option value="12">Other – 11th Year</option>
+              <option value="14">10th Year</option>
+              <option value="18">General commerce course</option>
+              <option value="19">Basic Ed 3rd Cycle</option>
+              <option value="22">Tech.-professional course</option>
+              <option value="26">7th year of schooling</option>
+              <option value="27">2nd cycle of gen. high school</option>
+              <option value="29">9th Year – Not Completed</option>
+              <option value="30">8th year</option>
+              <option value="34">Unknown</option>
+              <option value="35">Can't read or write</option>
+              <option value="36">Can read without 4th yr</option>
+              <option value="37">Basic Ed 1st Cycle</option>
+              <option value="38">Basic Ed 2nd Cycle</option>
+              <option value="39">Tech. Specialisation</option>
+              <option value="40">Higher Ed – Degree (1st cycle)</option>
+              <option value="41">Specialised higher studies</option>
+              <option value="42">Prof. Higher Tech.</option>
+              <option value="43">Higher Ed – Master's (2nd)</option>
+              <option value="44">Higher Ed – Doctorate (3rd)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label">Special Needs</label>
+            <div class="toggle-row">
+              <input type="radio" name="special_needs" id="sn_no" value="0" checked/>
+              <label for="sn_no">No</label>
+              <input type="radio" name="special_needs" id="sn_yes" value="1"/>
+              <label for="sn_yes">Yes</label>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Section 4: Economic Context -->
-      <div class="section">
-        <div class="section-title">📈 Economic Context</div>
-        <div class="form-grid three">
+      <!-- ECONOMIC CONTEXT -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon green">📈</div>
+          <div>
+            <div class="card-title">Economic Context</div>
+            <div class="card-sub">Macroeconomic indicators at time of enrollment</div>
+          </div>
+        </div>
+        <div class="form-grid cols3">
           <div class="field">
-            <label>Unemployment Rate (%)</label>
+            <label class="field-label">Unemployment Rate <span style="font-weight:400;color:var(--text-soft)">(%)</span></label>
             <input type="number" id="unemployment" value="10.8" step="0.1"/>
           </div>
           <div class="field">
-            <label>Inflation Rate (%)</label>
+            <label class="field-label">Inflation Rate <span style="font-weight:400;color:var(--text-soft)">(%)</span></label>
             <input type="number" id="inflation" value="1.4" step="0.1"/>
           </div>
           <div class="field">
-            <label>GDP</label>
+            <label class="field-label">GDP</label>
             <input type="number" id="gdp" value="1.74" step="0.01"/>
           </div>
         </div>
       </div>
 
+      <!-- ACTION BUTTON -->
       <button class="btn-predict" id="predictBtn" onclick="predict()">
-        Predict Dropout Risk
+        <div class="btn-icon">🔍</div>
+        Analyse Dropout Risk
       </button>
-      <div class="error-box" id="errorBox"></div>
+      <div class="error-bar" id="errorBar">
+        <span>⚠</span> <span id="errorMsg"></span>
+      </div>
 
     </div><!-- end left -->
 
-    <!-- ── RIGHT: Result Panel ── -->
+    <!-- ──────── RIGHT COLUMN ──────── -->
     <div class="result-panel">
-      <div class="section-title">📊 Prediction Result</div>
 
-      <div class="result-placeholder" id="placeholder">
-        <div class="icon">🎯</div>
-        <p>Fill in the student's details and click <strong>Predict</strong> to see the dropout risk assessment.</p>
+      <!-- RESULT CARD -->
+      <div class="result-card">
+        <div class="result-topbar">
+          <span class="result-topbar-title">Prediction Output</span>
+          <span class="result-topbar-icon">📋</span>
+        </div>
+        <div class="result-body">
+
+          <!-- Placeholder -->
+          <div class="placeholder" id="placeholder">
+            <div class="placeholder-art">🎯</div>
+            <h3>Awaiting Input</h3>
+            <p>Complete the student profile on the left and click <strong>Analyse Dropout Risk</strong> to generate a prediction.</p>
+          </div>
+
+          <!-- Result -->
+          <div class="result-display" id="resultDisplay">
+
+            <div class="risk-header HIGH" id="riskHeader">
+              <div class="risk-emoji" id="riskEmoji">🔴</div>
+              <div class="risk-text-wrap">
+                <div class="risk-level HIGH" id="riskLevel">HIGH RISK</div>
+                <div class="risk-sub" id="riskSub">Immediate attention required</div>
+              </div>
+            </div>
+
+            <div class="prob-section">
+              <div class="prob-ring-wrap">
+                <svg viewBox="0 0 100 100">
+                  <circle class="ring-bg" cx="50" cy="50" r="45"/>
+                  <circle class="ring-fill HIGH" id="ringFill" cx="50" cy="50" r="45"/>
+                </svg>
+                <div class="prob-center-text">
+                  <div class="prob-num HIGH" id="probNum">—</div>
+                  <div class="prob-pct">probability</div>
+                </div>
+              </div>
+              <div class="prob-caption">Dropout Probability</div>
+            </div>
+
+            <div class="risk-message" id="riskMessage"></div>
+
+            <div class="factors-title">Key Indicators</div>
+            <div id="factorsTable"></div>
+
+          </div>
+        </div>
       </div>
 
-      <div class="result-content" id="resultContent">
-        <div id="riskBadge" class="risk-badge"></div>
-
-        <div class="prob-display">
-          <div id="probNumber" class="prob-number">0%</div>
-          <div class="prob-label">Dropout Probability</div>
+      <!-- INTERVENTION GUIDANCE CARD -->
+      <div class="guidance-card">
+        <div class="guidance-header">🗂 Intervention Guidance</div>
+        <div class="guidance-body" id="guidanceBody">
+          <!-- filled dynamically -->
         </div>
-
-        <div class="prob-bar-wrap">
-          <div class="prob-bar" id="probBar"></div>
-        </div>
-
-        <div class="result-message" id="resultMessage"></div>
-
-        <div class="factors" id="factorsBox"></div>
       </div>
-    </div>
 
-  </div><!-- end grid -->
-</div><!-- end container -->
+    </div><!-- end right -->
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-strip">
+  EduRisk · XGBoost Binary Classification · For Faculty Use Only
+</div>
 
 <script>
 async function predict() {
-  const btn = document.getElementById('predictBtn');
-  const errBox = document.getElementById('errorBox');
+  const btn    = document.getElementById('predictBtn');
+  const errBar = document.getElementById('errorBar');
+  errBar.style.display = 'none';
 
-  // Gather form values
   const data = {
-    cu1_enrolled:     val('cu1_enrolled'),
-    cu1_approved:     val('cu1_approved'),
-    cu1_grade:        val('cu1_grade'),
-    cu1_evaluations:  val('cu1_evaluations'),
-    cu1_credited:     val('cu1_credited'),
-    cu1_without_eval: val('cu1_without_eval'),
-    cu2_enrolled:     val('cu2_enrolled'),
-    cu2_approved:     val('cu2_approved'),
-    cu2_grade:        val('cu2_grade'),
-    cu2_evaluations:  val('cu2_evaluations'),
-    cu2_credited:     val('cu2_credited'),
-    cu2_without_eval: val('cu2_without_eval'),
-    tuition_up_to_date: radio('tuition'),
-    debtor:           radio('debtor'),
-    scholarship:      radio('scholarship'),
-    displaced:        radio('displaced'),
-    age:              val('age'),
-    gender:           val('gender'),
-    admission_grade:  val('admission_grade'),
-    prev_qual_grade:  val('prev_qual_grade'),
-    marital_status:   val('marital_status'),
-    intl:             radio('intl'),
-    unemployment:     val('unemployment'),
-    inflation:        val('inflation'),
-    gdp:              val('gdp'),
+    cu1_enrolled:       v('cu1_enrolled'),
+    cu1_approved:       v('cu1_approved'),
+    cu1_grade:          v('cu1_grade'),
+    cu1_evaluations:    v('cu1_evaluations'),
+    cu1_credited:       v('cu1_credited'),
+    cu1_without_eval:   v('cu1_without_eval'),
+    cu2_enrolled:       v('cu2_enrolled'),
+    cu2_approved:       v('cu2_approved'),
+    cu2_grade:          v('cu2_grade'),
+    cu2_evaluations:    v('cu2_evaluations'),
+    cu2_credited:       v('cu2_credited'),
+    cu2_without_eval:   v('cu2_without_eval'),
+    tuition_up_to_date: r('tuition'),
+    debtor:             r('debtor'),
+    scholarship:        r('scholarship'),
+    displaced:          r('displaced'),
+    age:                v('age'),
+    gender:             v('gender'),
+    admission_grade:    v('admission_grade'),
+    prev_qual_grade:    v('prev_qual_grade'),
+    marital_status:     v('marital_status'),
+    intl:               r('intl'),
+    unemployment:       v('unemployment'),
+    inflation:          v('inflation'),
+    gdp:                v('gdp'),
+    prev_qual:          v('prev_qual'),
+    mother_qual:        v('mother_qual'),
+    father_qual:        v('father_qual'),
+    special_needs:      r('special_needs'),
   };
 
-  // Loading state
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>Analyzing...';
-  errBox.style.display = 'none';
+  btn.innerHTML = '<span class="spinner"></span> Analysing...';
 
   try {
     const res  = await fetch('/predict', {
@@ -651,83 +1247,109 @@ async function predict() {
       body: JSON.stringify(data)
     });
     const json = await res.json();
-
     if (!json.success) throw new Error(json.error);
-
     showResult(json, data);
-
-  } catch (e) {
-    errBox.textContent = '❌ Error: ' + e.message;
-    errBox.style.display = 'block';
+  } catch(e) {
+    document.getElementById('errorMsg').textContent = e.message;
+    errBar.style.display = 'flex';
   } finally {
     btn.disabled = false;
-    btn.innerHTML = 'Predict Dropout Risk';
+    btn.innerHTML = '<div class="btn-icon">🔍</div> Analyse Dropout Risk';
   }
 }
 
 function showResult(json, data) {
   const { probability, risk, emoji, message } = json;
 
-  document.getElementById('placeholder').style.display  = 'none';
-  const rc = document.getElementById('resultContent');
-  rc.classList.add('show');
+  document.getElementById('placeholder').style.display = 'none';
+  const rd = document.getElementById('resultDisplay');
+  rd.classList.add('visible');
 
-  // Badge
-  const badge = document.getElementById('riskBadge');
-  badge.className = `risk-badge ${risk}`;
-  badge.innerHTML = `${emoji} ${risk} RISK`;
+  // Risk header
+  const header = document.getElementById('riskHeader');
+  header.className = `risk-header ${risk}`;
+  document.getElementById('riskEmoji').textContent = emoji;
+  const lvl = document.getElementById('riskLevel');
+  lvl.className = `risk-level ${risk}`;
+  lvl.textContent = `${risk} RISK`;
 
-  // Number
-  const num = document.getElementById('probNumber');
-  num.className = `prob-number ${risk}`;
+  const subs = { HIGH: 'Immediate attention required', MEDIUM: 'Monitor and support student', LOW: 'Student on a good track' };
+  document.getElementById('riskSub').textContent = subs[risk];
+
+  // Probability ring
+  const ring = document.getElementById('ringFill');
+  ring.className = `ring-fill ${risk}`;
+  const circumference = 2 * Math.PI * 45;
+  setTimeout(() => {
+    ring.style.strokeDashoffset = circumference * (1 - probability / 100);
+  }, 80);
+
+  const num = document.getElementById('probNum');
+  num.className = `prob-num ${risk}`;
   num.textContent = probability + '%';
 
-  // Bar (animate after paint)
-  const bar = document.getElementById('probBar');
-  bar.className = `prob-bar ${risk}`;
-  setTimeout(() => bar.style.width = probability + '%', 50);
-
   // Message
-  const msg = document.getElementById('resultMessage');
-  msg.className = `result-message ${risk}`;
-  msg.textContent = message;
+  document.getElementById('riskMessage').textContent = message;
 
-  // Key factors summary
-  const pass1 = data.cu1_enrolled > 0
-    ? ((data.cu1_approved / data.cu1_enrolled) * 100).toFixed(0) + '%'
-    : 'N/A';
-  const pass2 = data.cu2_enrolled > 0
-    ? ((data.cu2_approved / data.cu2_enrolled) * 100).toFixed(0) + '%'
-    : 'N/A';
+  // Factors
+  const pass1 = data.cu1_enrolled > 0 ? ((data.cu1_approved / data.cu1_enrolled) * 100).toFixed(0) + '%' : 'N/A';
+  const pass2 = data.cu2_enrolled > 0 ? ((data.cu2_approved / data.cu2_enrolled) * 100).toFixed(0) + '%' : 'N/A';
   const finRisk = (data.tuition_up_to_date == 0 ? 1 : 0) + parseInt(data.debtor);
+  const trend = parseFloat(data.cu2_grade) >= parseFloat(data.cu1_grade) ? '↑ Improving' : '↓ Declining';
+  const trendColor = parseFloat(data.cu2_grade) >= parseFloat(data.cu1_grade) ? 'var(--green)' : 'var(--red)';
 
-  document.getElementById('factorsBox').innerHTML = `
-    <div class="factors-title">Key Factors Used</div>
-    <div class="factor-item">
-      <span>1st Sem Pass Rate</span>
-      <span class="factor-val">${pass1}</span>
-    </div>
-    <div class="factor-item">
-      <span>2nd Sem Pass Rate</span>
-      <span class="factor-val">${pass2}</span>
-    </div>
-    <div class="factor-item">
-      <span>Financial Risk Score</span>
-      <span class="factor-val">${finRisk} / 2</span>
-    </div>
-    <div class="factor-item">
-      <span>Grade Trend</span>
-      <span class="factor-val">${data.cu2_grade >= data.cu1_grade ? '📈 Improving' : '📉 Declining'}</span>
-    </div>
-    <div class="factor-item">
-      <span>Tuition Status</span>
-      <span class="factor-val">${data.tuition_up_to_date == 1 ? '✅ Paid' : '❌ Overdue'}</span>
-    </div>
+  document.getElementById('factorsTable').innerHTML = `
+    ${row('1st Sem Pass Rate', pass1)}
+    ${row('2nd Sem Pass Rate', pass2)}
+    ${row('Avg Grade (Sem 1)', parseFloat(data.cu1_grade).toFixed(1) + ' / 20')}
+    ${row('Avg Grade (Sem 2)', parseFloat(data.cu2_grade).toFixed(1) + ' / 20')}
+    ${row('Financial Risk', finRisk + ' / 2')}
+    ${row('Grade Trend', trend, trendColor)}
+    ${row('Tuition Status', data.tuition_up_to_date == 1 ? '✓ Current' : '✗ Overdue',
+          data.tuition_up_to_date == 1 ? 'var(--green)' : 'var(--red)')}
+    ${row('Scholarship', r2('scholarship') == 1 ? 'Yes' : 'No')}
   `;
+
+  // Guidance
+  const gBody = document.getElementById('guidanceBody');
+  gBody.classList.add('show');
+  const guidance = {
+    HIGH: [
+      { dot: 'high', text: 'Schedule an urgent 1-on-1 counselling session with the student this week.' },
+      { dot: 'high', text: 'Review financial aid options and tuition payment plans immediately.' },
+      { dot: 'high', text: 'Connect student with academic support services and peer tutoring.' },
+      { dot: 'high', text: 'Notify student affairs office and create an intervention action plan.' },
+    ],
+    MEDIUM: [
+      { dot: 'medium', text: 'Set up a check-in meeting within the next two weeks.' },
+      { dot: 'medium', text: 'Recommend academic workshops or supplementary study resources.' },
+      { dot: 'medium', text: 'Monitor attendance and assignment submission patterns closely.' },
+    ],
+    LOW: [
+      { dot: 'low', text: 'Student appears to be on track — continue regular monitoring.' },
+      { dot: 'low', text: 'Encourage ongoing academic engagement and extracurricular involvement.' },
+    ],
+  };
+  gBody.innerHTML = guidance[risk].map(g => `
+    <div class="guidance-item">
+      <div class="guidance-dot ${g.dot.toLowerCase()}">
+        ${ g.dot === 'high' ? '!' : g.dot === 'medium' ? '~' : '✓' }
+      </div>
+      <span>${g.text}</span>
+    </div>
+  `).join('');
 }
 
-function val(id)   { return document.getElementById(id).value; }
-function radio(nm) { return document.querySelector(`input[name="${nm}"]:checked`)?.value ?? 0; }
+function row(label, val, color) {
+  return `<div class="factor-row">
+    <span class="factor-name">${label}</span>
+    <span class="factor-val" style="${color ? 'color:' + color : ''}">${val}</span>
+  </div>`;
+}
+
+function v(id)  { return document.getElementById(id)?.value ?? 0; }
+function r(nm)  { return document.querySelector(`input[name="${nm}"]:checked`)?.value ?? 0; }
+function r2(nm) { return parseInt(document.querySelector(`input[name="${nm}"]:checked`)?.value ?? 0); }
 </script>
 </body>
 </html>
