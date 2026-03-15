@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # ── Load both pkl files ──────────────────────────────────────────
-BASE_DIR = r"D:\Student DropOut Risk Prediction"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 model  = joblib.load(os.path.join(BASE_DIR, "dropout_binary_model.pkl"))
 scaler = joblib.load(os.path.join(BASE_DIR, "dropout_binary_scaler.pkl"))
