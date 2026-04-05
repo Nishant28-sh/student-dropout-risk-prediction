@@ -9,8 +9,26 @@ app = Flask(__name__)
 # ── Load both pkl files ──────────────────────────────────────────
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-model  = joblib.load(os.path.join(BASE_DIR, "dropout_binary_model.pkl"))
-scaler = joblib.load(os.path.join(BASE_DIR, "dropout_binary_scaler.pkl"))
+model = None
+scaler = None
+MODEL_LOAD_ERROR = None
+
+
+def load_artifacts():
+    global model, scaler, MODEL_LOAD_ERROR
+    if model is not None and scaler is not None:
+        return True
+    if MODEL_LOAD_ERROR is not None:
+        return False
+
+    try:
+        model = joblib.load(os.path.join(BASE_DIR, "dropout_binary_model.pkl"))
+        scaler = joblib.load(os.path.join(BASE_DIR, "dropout_binary_scaler.pkl"))
+        return True
+    except Exception as exc:
+        MODEL_LOAD_ERROR = str(exc)
+        app.logger.exception("Failed to load model artifacts")
+        return False
 
 # ── Feature engineering (must match training exactly) ────────────
 def add_features(df):
@@ -93,9 +111,26 @@ FEATURE_COLUMNS = [
 def index():
     return render_template('index.html')
 
+
+@app.route('/health')
+def health():
+    ready = load_artifacts()
+    status_code = 200 if ready else 503
+    return jsonify({
+        'status': 'ok' if ready else 'degraded',
+        'model_ready': ready,
+        'error': MODEL_LOAD_ERROR
+    }), status_code
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
+        if not load_artifacts():
+            return jsonify({
+                'success': False,
+                'error': f"Model initialization failed: {MODEL_LOAD_ERROR}"
+            }), 500
+
         data = request.get_json()
 
         # Build raw dataframe from form input
