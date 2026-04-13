@@ -95,7 +95,7 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* Custom scrollbar */
+/* customised scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -117,7 +117,7 @@ input[type="number"] {
   pointer-events: none;
 }
 
-/* Selection Color */
+/* selection Color */
 ::selection {
   background: var(--accent);
   color: white;
